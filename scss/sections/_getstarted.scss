@@ -1,0 +1,22 @@
+@use "../custom" as *;
+
+.main-navbar{
+    .mc-logo{
+        width: 4rem;
+        height: 3.2rem;
+    }
+}
+.contactUs{
+    position: relative;
+    .contact-illustration{
+        width: 35%;
+        height: 180px;
+    }
+    i{
+        padding: 0 1rem 0 0;
+        font-size: 1rem;
+    }
+    .send-btn:hover{
+        color: #fff;
+    }
+}

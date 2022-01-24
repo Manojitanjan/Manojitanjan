@@ -1,0 +1,76 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.main-navbar{
+    .mc-logo{
+        width: 4rem;
+        height: 3.2rem;
+    }
+}
+.sidenav {
+    i{
+        display: inline-block;
+        font-size: 1.3rem;
+        color: $gray-800;
+        padding: 0 1rem;
+        &:hover {
+            color: $primary;
+            font-size: 1.3rem;
+        }
+    }
+    .termsPrivacy a{
+        display: inline-block;
+        font-size: 1.3rem;
+        color: $gray-800;
+        padding: 0 3rem;
+        &:hover {
+            color: $primary;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.intro {
+    width: 100%;
+    height: vh;
+    // background-color: $secondary;
+    .intro-section {
+        width: 80%;
+        height: 100%;
+        margin-top: 1rem;
+        padding: 1rem 0 0 0;
+        // background-color: $secondary;
+
+        .container {
+            .row {
+                .model {
+                    .intro-img {
+                        display: block;
+                        max-width: 200px;
+                        max-height: 170px;
+                        filter: grayscale(120);
+                        &:hover {
+                            filter: none;
+                        }
+                    }
+                    .intro-tooltip {
+                        @include media-breakpoint-down(md) {
+                            visibility: hidden;
+                        }
+                        width: 100%;
+                        height: vh;
+                        background-color: rgba($white, 0.8);
+                        color: $gray-700;
+                        border: 2px solid rgba($primary, 0.6);
+                        border-radius: 3%;
+                        visibility: visible;
+                        .intro-tooltip-para {
+                            font-size: 1rem;
+                            line-height: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

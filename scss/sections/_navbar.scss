@@ -1,0 +1,13 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.main-navbar{
+    // background-color: $secondary;
+    #main{
+        // margin-right: 1rem;
+        .custom-toggler:hover{
+            border: 0.2rem solid rgba($primary, 0.6);
+        }
+    }
+}
+

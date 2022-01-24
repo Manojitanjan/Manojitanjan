@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/fontawesome.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                background-color: #dee2e6;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+                opacity: 0.8;
+            }
+
+            .sidenav a {
+                padding: 28px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 35px;
+                text-align: center;
+                color: #000;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+                color: #6c757d;
+                font-size: 37px;
+            }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            #main {
+                transition: margin-left .7s;
+                /* padding-left: 95%; */
+                /* padding-top: 0.3rem; */
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {
+                    padding-top: 15px;
+                }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+            }
+
+            /* Set the border color */
+
+            .custom-toggler.navbar-toggler {
+                border-color: none;
+            }
+
+            /* Setting the stroke to green using rgb values (0, 128, 0) */
+            .custom-toggler .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(230, 60, 46, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+                font-size: 1.7rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- NAVBAR AND SEARCH BUTTON -->
+        <div class="row main-navbar mt-3">
+            <div class="col-12">
+                <nav class="navbar navbar-white bg-white">
+                    <div class="container-fluid">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="/images/mc-logo.jpeg" alt="MC Achakma Logo" class="mc-logo">
+                        </a>
+                        <div id="main">
+                            <!-- <button type="button" class="rounded-1 btn-rounded">Missing? -->
+                            <!-- </button> -->
+                            <button class="rounded-1 btn-rounded me-2" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                    class="fas fa-search"></i></button>
+                            <!-- <span style="font-size:40px;cursor:pointer; color: #008060;" onclick="openNav()">&#9776; </span> -->
+                            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                                aria-expanded="false" aria-label="Toggle navigation" style="color: #e63c2e;">
+                                <span class="navbar-toggler-icon" style="cursor:pointer;" onclick="openNav()"></span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- SIDE NAVBAR -->
+        <div id="mySidenav" class="sidenav">
+            <div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: 70px;">&times;</a>
+                <a href="about-me.html">About Me</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="#">Blog</a>
+                <a href="contacts.html">Contact</a>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-6 social mx-auto">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-6 termsPrivacy mx-auto">
+                    <a href="terms.html">Terms of use</a>
+                    <a href="policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <!-- OFFCANVAS BODY -->
+        <div class="offcanvas offcanvas-end bg-primary" data-bs-backdrop="false" data-bs-keyboard="true" tabindex="-1"
+            id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel" class="text-white"></h5>
+            </div>
+            <div class="offcanvas-body">
+                <div class="row h-100">
+                    <div class="col-sm-12 my-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter Keyword Here.."
+                                aria-label="Enyter Keyword here" aria-describedby="button-addon2">
+                            <button class="btn-close btn-close-white ms-2" type="button" id="button-addon2"
+                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SERVICES -->
+        <section id="services" class="my-services">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- NAV TAB CONTETS -->
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-ecommerce" role="tabpanel"
+                            aria-labelledby="nav-ecommerce-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3">Ecommerce</h3>
+                                            <p class="display-6--desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/web-dev.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-mobile" role="tabpanel" aria-labelledby="nav-web-mobile-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3">Web & Mobile Apps </h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,sapientevoluptatum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/mobile-app.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-design" role="tabpanel" aria-labelledby="nav-app-design-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3">App Design</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,sapientevoluptatum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/design.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-smm" role="tabpanel" aria-labelledby="nav-social-media-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3">Social Media Marketing</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,sapientevoluptatum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/social-media.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-seo" role="tabpanel" aria-labelledby="nav-seo-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3">SEO Services</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,sapientevoluptatum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/seo.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-content" role="tabpanel" aria-labelledby="nav-content-tab">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content">
+                                            <h3 class="display-6 mt-3 ">Content Strategy</h3>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,sapientevoluptatum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lasapiennte volupt atum? Odit quo rem voluptates debitis tempore quasi dolor iste atque quos veritatisrepudiandae, harum omnis exercitationem, doloribus, assumenda provident!Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            <a href="projects.html" role="button" class="project-btn col-6 btn btn-outline-primary">
+                                                <i class="fas fa-desktop pe-3"></i>
+                                                Projects
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="my-services-content text-center">
+                                            <img src="images/arts/content.png" alt="Web Development Illustration"
+                                                class="img-fluid my-services-illustration">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <div class="nav nav-tabs nav-justified mt-5" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-ecommerce-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-ecommerce" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Ecommerce</button>
+                            <button class="nav-link" id="nav-web-mobile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-mobile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">Mobile and Web Apps</button>
+                            <button class="nav-link" id="nav-app-design-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-design" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">App Design</button>
+                            <button class="nav-link" id="nav-social-media-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-smm" type="button" role="tab" aria-controls="nav-smm"
+                                aria-selected="false">Social Media Marketing</button>
+                            <button class="nav-link" id="nav-seo-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-seo" type="button" role="tab" aria-controls="nav-seo"
+                                aria-selected="false">SEO Serivces</button>
+                            <button class="nav-link" id="nav-content-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-content" type="button" role="tab" aria-controls="nav-content"
+                                aria-selected="false">Content Strategy</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!-- display-2> title> desc sass preprocessors are found at typography -->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+            $(function () {
+                $('[data-toggle="modal"]').hover(function () {
+                    var modalId = $(this).data('target');
+                    $(modalId).modal('show');
+
+                });
+
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+        <!-- <script src="assets/js/bootstrap.bundle.js"></script> -->
+    </body>
+
+</html>

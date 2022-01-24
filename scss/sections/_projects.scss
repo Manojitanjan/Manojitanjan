@@ -1,0 +1,18 @@
+@use "../custom" as *;
+
+.main-navbar{
+    .mc-logo{
+        width: 4rem;
+        height: 3.2rem;
+    }
+}
+.my-projects {
+    position: relative;
+    .project-div {
+        padding: 0 3rem;
+        .my-project-illustration {
+            width: 80%;
+            height: 420px;
+        }
+    }
+}

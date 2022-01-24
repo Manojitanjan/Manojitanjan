@@ -1,0 +1,31 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+#main {
+    .btn-rounded {
+        position: relative;
+        bottom: 5px;
+        padding: 1.175rem 1.4rem;
+        background-color: $white;
+        border: 0.2rem solid rgba($primary, 0.8);
+        i {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: $primary;
+            font-size: 2rem;
+            line-height: 2rem;
+            &:hover{
+                color: $white;
+            }
+        }
+        &:hover {
+            background-color: $primary;
+            padding: 1.275rem 1.4rem;
+            border: 0.2rem solid rgba($gray-300, 0.8);
+            i{
+                color: $white;
+            }
+        }
+    }
+}

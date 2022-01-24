@@ -1,0 +1,32 @@
+@use '../custom' as *;
+
+// HEADING AND DESC
+.display-6{
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+
+    &--title{
+       display: inline-block;
+       font-weight: 600;
+       color: $primary;
+       font-family: 'Poppins', sans-serif;
+
+    }
+    &--desc{
+        font-size: 1.1rem;
+        display: block; 
+        color: $green-light;   
+        margin-top: 1.2rem;
+        text-transform: none;
+    }
+}
+
+// HEADING LINE
+.heading-line{
+    width: 30rem;
+    height: 1px;
+    display: block;
+    margin: 0 auto;
+    background-color: $primary;
+}

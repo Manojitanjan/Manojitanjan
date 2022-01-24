@@ -1,0 +1,15 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.main-navbar{
+    .mc-logo{
+        width: 4rem;
+        height: 3.2rem;
+    }
+}
+.about-me{
+    position: relative;
+    .about-me-div{
+        padding: 0 3rem;
+    }
+}
